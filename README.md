@@ -2,7 +2,7 @@
 An integration software to ease  and hasten up development process in nodejs . It is a low level software due to the usage of tcp protocol and can integrate from the frontend through the backend
 
 
-### Defining core methods and functions
+### Defining core methods and functions of the controlSystem
 
 #### control.addSystem() / control.addSystems()
 This is the more inportant part as it allows you to add in mini server systems.
@@ -169,3 +169,6 @@ mini
    }) 
 
 ```
+
+
+### Defining core methods and functions of the  miniSystem
