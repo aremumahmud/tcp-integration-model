@@ -1,9 +1,10 @@
 const miniSystem = require('./src/miniSystemModel')
-/*
-*    importing the mini system module
-*
-*    and exporting it out !
-*/
+const controlSystem = require('./src/controlSystemModel')
+    /*
+     *    importing the mini system module
+     *
+     *    and exporting it out !
+     */
 
 
-module.exports = miniSystem
+module.exports = { miniSystem, controlSystem }

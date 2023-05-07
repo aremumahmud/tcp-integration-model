@@ -172,3 +172,31 @@ mini
 
 
 ### Defining core methods and functions of the  miniSystem
+
+### mini.startOperation(port  , callback)
+
+this method starts the tcp server at the 'port' and calls the 'callback' if connected.
+Another event handler handles the errors which is the 'sysError event'
+
+```
+var miniSystem = require('tcp-integration-model')
+var mini = new miniSystem()
+
+mini 
+   .startOperation(3000 , onstart)
+   .on('sysError' , err=>{
+       console.log(err)
+   }) 
+
+```
+
+### The 'init' event
+
+This event is fired if a system trys to connect to 'it', having along the servers information for connection
+or rejection which is done by either 'toggling' the bindToQueue method
+
+### mini.bindToQueue(nameOfSys , socket)
+
+This method binds a system or server to the miniSystem queue enabling it for internal operations and 
+legitimately making it active, 
+
