@@ -11,7 +11,7 @@ while the ` control.addSystems()` accepts an array of systems
 
 an example of a system is shown
 
-```
+```javascript
 let  SYSTEM = { 
 
                PORT ,
@@ -30,7 +30,7 @@ also log its connection and disconnection
 ##### control.startServer
 This method starts an http connection to a browser for easy communication with the browser.
 It arguments are a port number and a web app i.e express app
-```
+```javascript
 controlSystem.startServer( PORT , EXPRESSAPP or simple HTTP APP)
 ```
 
@@ -39,7 +39,7 @@ controlSystem.startServer( PORT , EXPRESSAPP or simple HTTP APP)
 This method allows the easy integration of websocket Frameworks such as socket.io
 for easy communication
 
-```
+```javascript
 var sock = require('socket.io')
 controlSystem.integrateSocketCommunucation(sock)
 
@@ -48,7 +48,7 @@ controlSystem.integrateSocketCommunucation(sock)
 
 This is a listener that listens for incomming data/msg coming from server systems such as the minisystem model
 
-```
+```javascript
 controlSystem.on( EVENT , EVENT_HANDLER)
 ```
 
@@ -61,7 +61,7 @@ while the ` control.setActionSchemes()` accepts an array of schemas
 
 an example of a scheme would be
 
-```
+```javascript
  {
         action : 'login' , 
         exec : (data, master)=>{
@@ -84,14 +84,14 @@ where the action specifies the event and exec passes the data recieved and the c
 This method emits message or data to the frontend using a socket.io id of the browser which we dont have to
 worry about as the model takes care of it. An example is seen as shown
 
-```
+```javascript
 control.emitToClient(SOCKET.IO ID , EVENT , DATA)
 ```
 #### control.send()
 This method allow the model to be able to send data seamlessly to other mini servers, therfore communicating as the mini servers 
 send an event depending of which msg was sent as shown at control.on() method . example
 
-```
+```javascript
 control.send( SYSTEMNAME , DATA , EVENT)
 ```
 #### control.addSystem() / control.addSystems()
@@ -101,7 +101,7 @@ while the ` control.addSystems()` accepts an array of systems
 
 an example of a system is shown
 
-```
+```javascript
 let  SYSTEM = { 
 
                PORT ,
@@ -117,7 +117,7 @@ control.addSystem( NAME , SYSTEM)
 
 ## setup
 
-```
+```javascript
 var controlSystem = require('./src/controlSystemModel')
 var control = new controlSystem('master')
 var sock = require('socket.io')
@@ -134,7 +134,7 @@ control
 ```
 ### or we setup up control through the minisystem
 
-```
+```javascript
 var miniSystem = require('tcp-integration-model')
 var mini = new miniSystem()
 var control = mini.controlSystem('master')
@@ -154,7 +154,7 @@ and that is for the setup of a controller which can connect to multiple tcp serv
 
 ## to setup a tcp server mini model
 
-```
+```javascript
 var miniSystem = require('tcp-integration-model')
 var mini = new miniSystem()
 
@@ -178,7 +178,7 @@ mini
 this method starts the tcp server at the 'port' and calls the 'callback' if connected.
 Another event handler handles the errors which is the 'sysError event'
 
-```
+```javascript
 var miniSystem = require('tcp-integration-model')
 var mini = new miniSystem()
 
